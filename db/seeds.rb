@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+TextChunk.find_or_create_by_name 'homepage/content',
+  :description => 'Tab 2 Content',
+  :text_chunk => %q{
+    This is editable content please cahnge me  
+  }    
