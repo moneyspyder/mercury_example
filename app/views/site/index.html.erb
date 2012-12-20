@@ -1,6 +1,15 @@
 <h1>Welcome to the home page</h1>
 <h2>Change to snippet</h2>
 
-<div id='home_content' class="example_snippet" data-mercury="full">
+<div id='home_content' class="example_snippet" data-mercury="markdown">
   <%= TextChunk.find_by_name('homepage/content').text_chunk.html_safe %>
 </div>
+<% if is_editing? %>
+<%= link_to_function  "Cancel", 
+                      "document.cookie='editing=#{is_editing? ? 'false' : 'true'}';top.location.href=top.location.href" 
+%>
+<% else %>
+<%= link_to_function  "Edit", 
+                      "document.cookie='editing=#{is_editing? ? 'false' : 'true'}';top.location.href=top.location.href" 
+%>
+<% end %>

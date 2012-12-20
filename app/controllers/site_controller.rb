@@ -15,6 +15,8 @@ class SiteController < ApplicationController
       text_chuck = TextChunk.find_by_name('homepage/content')
       text_chuck.text_chunk = params[:content][:home_content][:value]
       text_chuck.save
+      render :text => ''
+      #redirect_to 
     end
 
   end
